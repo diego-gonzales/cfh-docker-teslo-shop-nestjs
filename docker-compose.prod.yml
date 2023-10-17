@@ -8,12 +8,12 @@ services:
       context: .
       target: prod
       dockerfile: Dockerfile
-    image: diegoegj/nest-teslo-shop-app:1.0.0
+    image: diegoegj/nest-teslo-shop-app:1.0.0 # Le asigna un tag a la imagen
     container_name: nest-teslo-shop-app
     ports:
       - ${PORT}:${PORT}
     env_file:
-      - .env
+      - .env # Es mejor que declarar las variables de entorno en el archivo docker-compose.yml
 
   db:
     image: postgres:14.3
